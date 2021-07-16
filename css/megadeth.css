@@ -1,0 +1,998 @@
+@charset "UTF-8";
+* {
+  margin: 0%;
+  padding: 0%; }
+
+/*Large devioces*/
+@media only screen and (min-width: 992px) {
+  #btnMenu, .imgMenu, .labelMenu {
+    display: none; }
+  a {
+    text-decoration: none;
+    color: black; }
+  .bodyIndex {
+    background-color: black;
+    height: 100vh; }
+  .encabezadoPagina {
+    background-color: black;
+    height: 12vw;
+    display: grid;
+    grid-template-columns: 15% 20% 65%;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: ". . ." "logo . titulo";
+    justify-content: center; }
+  .tituloPagina {
+    grid-area: titulo;
+    align-self: center;
+    justify-self: left;
+    animation-name: slide;
+    animation-duration: 2s;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5vw;
+    color: mediumblue;
+    text-align: center; }
+  @keyframes slide {
+    from {
+      margin-left: 100%; }
+    to {
+      justify-self: left; } }
+  .logoEncabezado {
+    grid-area: logo;
+    height: 4.2vw;
+    align-self: center;
+    animation-name: slide;
+    animation-duration: 1s; }
+  /*Estilos Menu*/
+  .menu {
+    height: 5%;
+    width: 100%;
+    position: fixed;
+    display: block;
+    z-index: 100; }
+    .menu__lista {
+      background: #000a65;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 800;
+      font-size: 2vw;
+      text-decoration: none;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%; }
+    .menu__li {
+      display: inline-block;
+      text-align: center;
+      margin-right: 50px; }
+    .menu__item {
+      color: white;
+      opacity: 3;
+      text-decoration: none; }
+  /*Estilos del pie de pagina*/
+  .footer {
+    background: #000a65;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    height: 12vh; }
+    .footer__lista {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      align-items: center;
+      width: 80%;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      color: whitesmoke; }
+    .footer a {
+      color: whitesmoke; }
+  /*Titulos con bebas neue y Textos con OSWALD
+redes con Teko*/
+  /*Estilos de pagina prtincipal*/
+  .index {
+    background-image: url(../images/mustaineFondo.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 90%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 50% 45%;
+    grid-template-rows: 10% 25% 40% 25%;
+    grid-template-areas: ". . ." ". logo ." ". texto ." ". boton .";
+    justify-items: center;
+    align-items: center; }
+    .index__txt {
+      color: white;
+      /* font-family: 'Oswald', sans-serif; */
+      /*comentado para que se apliuque la tipografioa de bootstrap*/
+      font-size: 1.4vw;
+      font-weight: 600;
+      text-align: center;
+      height: 70%;
+      width: 100%;
+      grid-area: texto;
+      backdrop-filter: blur(5px); }
+    .index__logo {
+      height: 100%;
+      width: 100%;
+      grid-area: logo;
+      text-align: center; }
+    .index .txtBoton {
+      font-family: 'Oswald', sans-serif;
+      color: whitesmoke; }
+    .index__boton, .botonEnviar, .botonReset {
+      background-color: #000a65;
+      height: 35%;
+      width: 20%;
+      border-radius: 15px;
+      grid-area: boton;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none; }
+    .index__boton a, .botonEnviar a, .botonReset a {
+      height: 100%;
+      width: 100%; }
+  /*PAGINA INTEGRANTES*/
+  .listadoIntegrantes2 {
+    display: none; }
+  .seccIntegrante1 {
+    width: 100%;
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: ". titulo img" ". txt img"; }
+  .seccIntegrante2 {
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 40% 50% 10%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: "img titulo ." "img txt ."; }
+  .seccIntegrante3 {
+    width: 100%;
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 10% 50% 40%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: ". titulo img" ". txt img"; }
+  @keyframes movTxt {
+    from {
+      transform: rotateY(0deg); }
+    to {
+      transform: rotateY(25deg); } }
+  .txtIntegrante1 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2vw;
+    grid-area: txt;
+    width: 70%; }
+  .txtIntegrante2 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2vw;
+    grid-area: txt;
+    width: 70%; }
+  .txtIntegrante3 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2vw;
+    grid-area: txt;
+    width: 70%; }
+  .txtIntegrante1:hover {
+    animation-name: movTxt;
+    animation-duration: 2s; }
+  .txtIntegrante2:hover {
+    animation-name: movTxt;
+    animation-duration: 2s; }
+  .txtIntegrante3:hover {
+    animation-name: movTxt;
+    animation-duration: 2s; }
+  .fotoIntegranteR {
+    height: 100%;
+    width: 30%;
+    width: auto;
+    grid-area: img;
+    justify-self: end; }
+  .fotoIntegranteL {
+    height: 100%;
+    width: auto;
+    grid-area: img;
+    justify-self: start; }
+  .tituloIntegrante {
+    grid-area: titulo;
+    align-self: end;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    font-size: 3vw;
+    color: whitesmoke; }
+  .tituloIntegrante:hover {
+    animation-name: movTxt;
+    animation-duration: 2s; }
+  /*PAGINA DISCOGRAFIA*/
+  .disco {
+    background-color: #434343;
+    display: grid;
+    grid-template-columns: 30% 15% 55%;
+    grid-template-areas: "img titulo track"; }
+    .disco__tracklist {
+      list-style-type: decimal;
+      color: blanchedalmond;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2vw;
+      grid-area: track;
+      margin-left: 10%;
+      align-self: center;
+      filter: blur(12px); }
+    .disco__tracklist:hover {
+      animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(5px); }
+    100% {
+      filter: blur(0px); } }
+    .disco__titulo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3vw;
+      color: white;
+      grid-area: titulo; }
+    .disco__titulo:hover {
+      animation: text-pop-up-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: text-pop-up-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  @keyframes text-pop-up-right {
+    0% {
+      transform: translateX(0);
+      transform: translateX(0);
+      text-shadow: none; }
+    100% {
+      transform: translateX(20px);
+      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3); } }
+    .disco__img {
+      grid-area: img;
+      height: 50%;
+      filter: grayscale(100%); }
+    .disco__img:hover {
+      animation-name: tamaño;
+      animation-duration: 1s;
+      height: 100%;
+      filter: grayscale(0%); }
+  @keyframes tamaño {
+    from {
+      height: 50%;
+      filter: grayscale(100%); }
+    to {
+      height: 100%;
+      filter: grayscale(0%); } }
+  .tituloPagina {
+    font-family: 'Bebas Neue', cursive;
+    color: mediumblue;
+    text-align: center; }
+  /*Pagina CONTACTO*/
+  .contacto {
+    height: 65%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 45% 50%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: ". forms gif" ". botones gif"; }
+  .contacto__info {
+    grid-area: forms;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, black, #a7a7a7); }
+  .gifContacto {
+    grid-area: gif;
+    height: 100%;
+    width: 100%; }
+  label {
+    width: 70%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2vw;
+    color: blanchedalmond; }
+  textarea, input {
+    width: 70%; }
+  .botonesContacto {
+    width: 100%;
+    grid-area: botones;
+    display: inline-block;
+    background: linear-gradient(to right, black, #a7a7a7); }
+  .newsCheck {
+    width: 5%; }
+  .botonEnviar, .botonReset {
+    height: 20%;
+    width: 15%;
+    display: inline-block;
+    color: white;
+    font-size: 1vw;
+    font-family: 'Oswald', sans-serif; }
+  /*pagina SHOWS*/
+  .seccShows {
+    display: flex;
+    background-image: url(../images/publico1_.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    /*background: linear-gradient( black, rgb(167,167,167)):*/
+    height: 70%; }
+  /* EStilos para la tabla*/
+  table {
+    text-align: center;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+  th {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    font-size: 2vw;
+    color: whitesmoke; }
+  td {
+    font-size: 1.2vw;
+    font-family: 'Oswald', sans-serif;
+    border: whitesmoke 1px solid;
+    backdrop-filter: blur(5px); } }
+
+/* medium devices */
+@media only screen and (max-width: 992px) {
+  * {
+    padding: 0%;
+    border: 0%; }
+  header {
+    background: black;
+    align-items: flex-end; }
+    header #btnMenu {
+      display: none; }
+    header #btnMenu:checked ~ .menu {
+      margin: 0;
+      transition: .4s; }
+    header .imgMenu {
+      width: 10vw;
+      margin-left: 85vw; }
+    header .labeMenu {
+      display: block;
+      margin-left: 70%; }
+    header .labelMenu:hover {
+      cursor: pointer; }
+    header .menu {
+      width: 100%;
+      display: flex;
+      height: 8vh;
+      position: absolute;
+      margin-left: -100%; }
+      header .menu__lista {
+        background-color: black;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+        font-size: 10vw;
+        text-decoration: none;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        transition: .4s;
+        z-index: 100; }
+      header .menu__li {
+        display: inline-block;
+        text-align: center;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white; }
+      header .menu__item {
+        color: white;
+        opacity: 3;
+        text-decoration: none; }
+  .index {
+    display: flex;
+    background-image: url(../images/mustaine.jpg);
+    flex-direction: column;
+    width: 100%;
+    grid-area: texto;
+    background-color: darkgrey;
+    background-size: cover;
+    justify-content: center;
+    height: 85vh; }
+    .index__logo {
+      width: 70%;
+      align-self: center; }
+    .index__txt {
+      color: whitesmoke;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5vw;
+      text-align: center;
+      height: 30%;
+      width: 90%;
+      justify-self: center;
+      align-self: center;
+      border-top: 20vh;
+      backdrop-filter: blur(1px); }
+    .index__boton, .botonEnviar, .botonReset {
+      background-color: #000a65;
+      height: 8%;
+      width: 30%;
+      border-radius: 7px;
+      font-family: 'Oswald', sans-serif;
+      grid-area: boton;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none; }
+    .index .txtBoton {
+      color: white;
+      margin: 0; }
+  /* ENCABEZADO PAGINA SMALL */
+  .encabezadoPagina {
+    background-color: black;
+    height: 10vw;
+    display: flex;
+    grid-template-columns: 15% 20% 65%;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: ". . ." "logo . titulo";
+    justify-content: center; }
+  .tituloPagina {
+    grid-area: titulo;
+    align-self: center;
+    justify-self: left;
+    animation-name: slide;
+    animation-duration: 2s;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 10vw;
+    color: mediumblue;
+    text-align: center; }
+  @keyframes slide {
+    from {
+      margin-left: 100%; }
+    to {
+      justify-self: left; } }
+  .logoEncabezado {
+    display: none; }
+  .index__boton a, .botonEnviar a, .botonReset a {
+    height: 100%;
+    width: 100%; }
+  /* ESTILOS DISCOGRAFIA SMALL  */
+  .disco {
+    background-color: #434343;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-areas: "img titulo track"; }
+    .disco__tracklist {
+      list-style-type: decimal;
+      color: blanchedalmond;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8vw;
+      grid-area: track;
+      margin-left: 10%;
+      align-self: center;
+      filter: blur(12px); }
+    .disco__tracklist:hover {
+      animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(5px); }
+    100% {
+      filter: blur(0px); } }
+    .disco__titulo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 5.5vw;
+      color: white;
+      grid-area: titulo; }
+    .disco__titulo:hover {
+      animation: text-pop-up-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: text-pop-up-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  @keyframes text-pop-up-right {
+    0% {
+      transform: translateX(0);
+      transform: translateX(0);
+      text-shadow: none; }
+    100% {
+      transform: translateX(20px);
+      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3); } }
+    .disco__img {
+      grid-area: img;
+      width: 50%;
+      filter: grayscale(100%); }
+    .disco__img:hover {
+      animation-name: tamaño;
+      animation-duration: 1s;
+      filter: grayscale(0%); }
+  @keyframes tamaño {
+    from {
+      width: 50%;
+      filter: grayscale(100%); }
+    to {
+      width: 100%;
+      filter: grayscale(0%); } }
+  /* FOOTER */
+  .footer {
+    background: #000a65;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    height: 11vh; }
+    .footer__lista {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      align-items: center;
+      width: 80%;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      color: whitesmoke; }
+    .footer a {
+      color: whitesmoke; }
+  /*  SHOWS */
+  .seccShows {
+    display: flex;
+    background-image: url(../images/publico1_.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-color: #a7a7a7;
+    height: 78vh; }
+  table {
+    text-align: center;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+  th {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    font-size: 6vw;
+    color: whitesmoke; }
+  td {
+    font-size: 3vw;
+    font-family: 'Oswald', sans-serif;
+    border: whitesmoke 1px solid;
+    backdrop-filter: blur(5px); }
+  /*SECCION CONTACTO*/
+  .contacto {
+    height: 80vh;
+    width: 100%; }
+  .contacto__info {
+    grid-area: forms;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, black, #a7a7a7);
+    height: 50%;
+    align-items: center; }
+  .gifContacto {
+    display: none; }
+  label {
+    width: 70%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4vw;
+    color: blanchedalmond; }
+  textarea, input {
+    width: 70%; }
+  .botonesContacto {
+    width: 100%;
+    grid-area: botones;
+    display: inline-block;
+    background: linear-gradient(to right, black, #a7a7a7);
+    height: 50%;
+    align-items: center; }
+  .newsCheck {
+    width: 5%; }
+  .botonEnviar, .botonReset {
+    grid-area: botones;
+    height: 5%;
+    width: 15%;
+    align-items: center; }
+  /*INTEGRANTES SMALL*/
+  .listadoIntegrantes2 {
+    display: none; }
+  .seccIntegrante1 {
+    width: 100%;
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: ". titulo img" ". txt img"; }
+  .seccIntegrante2 {
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 40% 50% 10%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: "img titulo ." "img txt ."; }
+  .seccIntegrante3 {
+    width: 100%;
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 10% 50% 40%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: ". titulo img" ". txt img"; }
+  @keyframes movTxt {
+    from {
+      transform: rotateY(0deg); }
+    to {
+      transform: rotateY(25deg); } }
+  .txtIntegrante1 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3vw;
+    grid-area: txt;
+    width: 70%;
+    z-index: 5; }
+  .txtIntegrante2 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3vw;
+    grid-area: txt;
+    width: 70%;
+    z-index: 5; }
+  .txtIntegrante3 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3vw;
+    grid-area: txt;
+    width: 70%;
+    z-index: 5; }
+  .fotoIntegranteR {
+    height: 100%;
+    width: 30%;
+    width: auto;
+    grid-area: img;
+    justify-self: end;
+    z-index: 2; }
+  .fotoIntegranteL {
+    height: 100%;
+    width: auto;
+    grid-area: img;
+    justify-self: start;
+    z-index: 2; }
+  .tituloIntegrante {
+    grid-area: titulo;
+    align-self: end;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    font-size: 5vw;
+    color: whitesmoke;
+    z-index: 5; } }
+
+/* extra small devices */
+@media only screen and (max-width: 600px) {
+  * {
+    padding: 0%;
+    border: 0%; }
+  header {
+    background: black;
+    align-items: flex-end; }
+    header #btnMenu {
+      display: none; }
+    header #btnMenu:checked ~ .menu {
+      margin: 0;
+      transition: .4s; }
+    header .imgMenu {
+      width: 10vw;
+      margin-left: 87vw; }
+    header .labeMenu {
+      display: block;
+      margin-left: 70%; }
+    header .labelMenu:hover {
+      cursor: pointer; }
+    header .menu {
+      width: 100%;
+      display: flex;
+      height: 8vh;
+      position: absolute;
+      margin-left: -100%; }
+      header .menu__lista {
+        background-color: black;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+        font-size: 10vw;
+        text-decoration: none;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        transition: .4s;
+        z-index: 100; }
+      header .menu__li {
+        display: inline-block;
+        text-align: center;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white; }
+      header .menu__item {
+        color: white;
+        opacity: 3;
+        text-decoration: none; }
+  .index {
+    display: flex;
+    background-image: url(../images/mustaine.jpg);
+    flex-direction: column;
+    width: 100%;
+    grid-area: texto;
+    background-color: darkgrey;
+    background-size: cover;
+    justify-content: center;
+    height: 85vh; }
+    .index__logo {
+      width: 70%;
+      align-self: center; }
+    .index__txt {
+      color: whitesmoke;
+      font-family: 'Oswald', sans-serif;
+      font-size: 4vw;
+      text-align: center;
+      height: 30%;
+      width: 90%;
+      justify-self: center;
+      align-self: center;
+      border-top: 20vh;
+      backdrop-filter: blur(1px); }
+    .index__boton, .botonEnviar, .botonReset {
+      background-color: #000a65;
+      height: 8%;
+      width: 30%;
+      border-radius: 7px;
+      font-family: 'Oswald', sans-serif;
+      grid-area: boton;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none; }
+    .index .txtBoton {
+      color: white;
+      margin: 0; }
+  /* ENCABEZADO PAGINA SMALL */
+  .encabezadoPagina {
+    background-color: black;
+    height: 10vw;
+    display: flex;
+    grid-template-columns: 15% 20% 65%;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: ". . ." "logo . titulo";
+    justify-content: center; }
+  .tituloPagina {
+    grid-area: titulo;
+    align-self: center;
+    justify-self: left;
+    animation-name: slide;
+    animation-duration: 2s;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 10vw;
+    color: mediumblue;
+    text-align: center; }
+  @keyframes slide {
+    from {
+      margin-left: 100%; }
+    to {
+      justify-self: left; } }
+  .logoEncabezado {
+    display: none; }
+  .index__boton a, .botonEnviar a, .botonReset a {
+    height: 100%;
+    width: 100%; }
+  /* ESTILOS DISCOGRAFIA SMALL  */
+  .disco {
+    background-color: #434343;
+    height: 432px;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 35% 65%;
+    grid-template-areas: "img titulo" "track titulo"; }
+    .disco__tracklist {
+      list-style-type: decimal;
+      color: blanchedalmond;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2vw;
+      grid-area: track;
+      margin-left: 10%;
+      align-self: center;
+      filter: blur(12px);
+      z-index: 90; }
+    .disco__titulo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 7vw;
+      color: white;
+      grid-area: titulo;
+      z-index: 90; }
+    .disco__img {
+      grid-area: img;
+      width: 100vw;
+      z-index: 91; }
+    .disco__img:hover {
+      animation-name: tamaño;
+      animation-duration: 1s;
+      width: 100%; }
+  @keyframes tamaño {
+    from {
+      width: 100vw; }
+    to {
+      width: 50vh; } }
+  /* FOOTER */
+  .footer {
+    background: #000a65;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    height: 11vh; }
+    .footer__lista {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      align-items: center;
+      width: 80%;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      color: whitesmoke; }
+    .footer a {
+      color: whitesmoke; }
+  /*  SHOWS */
+  .seccShows {
+    display: flex;
+    background-image: url(../images/publico1_.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-color: #a7a7a7;
+    height: 78vh; }
+  table {
+    text-align: center;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+  th {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    font-size: 6vw;
+    color: whitesmoke; }
+  td {
+    font-size: 3vw;
+    font-family: 'Oswald', sans-serif;
+    border: whitesmoke 1px solid;
+    backdrop-filter: blur(5px); }
+  /*SECCION CONTACTO*/
+  .contacto {
+    height: 80vh;
+    width: 100%; }
+  .contacto__info {
+    grid-area: forms;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, black, #a7a7a7);
+    height: 50%;
+    align-items: center; }
+  .gifContacto {
+    display: none; }
+  label {
+    width: 70%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4vw;
+    color: blanchedalmond; }
+  textarea, input {
+    width: 70%; }
+  .botonesContacto {
+    width: 100%;
+    grid-area: botones;
+    display: inline-block;
+    background: linear-gradient(to right, black, #a7a7a7);
+    height: 50%;
+    align-items: center; }
+  .newsCheck {
+    width: 5%; }
+  .botonEnviar, .botonReset {
+    grid-area: botones;
+    height: 5%;
+    width: 15%;
+    align-items: center; }
+  /*INTEGRANTES SMALL*/
+  .listadoIntegrantes1 {
+    display: none; }
+  .listadoIntegrantes2 {
+    display: flex;
+    flex-wrap: wrap; }
+  .seccIntegrante1 {
+    width: 100%;
+    background-image: url(../images/mustaineSolo2.png);
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: ". titulo img" ". txt img"; }
+  .seccIntegrante2 {
+    background-image: url(../images/loureiroSolo.png);
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 40% 50% 10%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: "img titulo ." "img txt ."; }
+  .seccIntegrante3 {
+    width: 100%;
+    background-image: url(../images/dirkSolo.png);
+    background-size: cover;
+    background-color: #434343;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 10% 50% 40%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: ". titulo img" ". txt img"; }
+  @keyframes movTxt {
+    from {
+      transform: rotateY(0deg); }
+    to {
+      transform: rotateY(25deg); } }
+  .txtIntegrante1 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5vw;
+    grid-area: txt;
+    width: 70%;
+    z-index: 5; }
+  .txtIntegrante2 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5vw;
+    grid-area: txt;
+    width: 70%;
+    z-index: 5; }
+  .txtIntegrante3 {
+    color: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5vw;
+    grid-area: txt;
+    width: 70%;
+    z-index: 4; }
+  .fotoIntegranteR {
+    height: 100%;
+    width: 30%;
+    width: auto;
+    grid-area: img;
+    justify-self: end;
+    z-index: 4;
+    display: none; }
+  .fotoIntegranteL {
+    height: 100%;
+    width: auto;
+    grid-area: img;
+    justify-self: start;
+    z-index: 4;
+    display: none; }
+  .tituloIntegrante {
+    grid-area: titulo;
+    align-self: end;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    font-size: 8vw;
+    color: whitesmoke;
+    z-index: 10; } }
