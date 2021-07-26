@@ -856,7 +856,6 @@ redes con Teko*/
       grid-area: track;
       margin-left: 10%;
       align-self: center;
-      filter: blur(12px);
       z-index: 90; }
     .disco__titulo {
       font-family: 'Bebas Neue', cursive;
