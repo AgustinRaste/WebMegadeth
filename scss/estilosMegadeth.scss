@@ -19,6 +19,10 @@ a{
     height: 100vh;
 }
 
+.headerLogo{
+    display: none;
+}
+
 .encabezadoPagina{
     background-color: black;
     height: 12vw;
@@ -100,7 +104,7 @@ a{
 }
 
 
-/*Estilos del pie de pagina*/
+/*Estilos FOOTER*/
 .footer{
         background:rgb(0, 10, 101);
         font-family: 'Bebas Neue', cursive;
@@ -108,7 +112,7 @@ a{
         list-style-type: none;
         display: flex;
         justify-content: center;
-        height: 12vh;
+        height: 12vw;
     
     
         &__lista{
@@ -179,7 +183,7 @@ redes con Teko*/
 }
 
 
- &__boton{
+&__boton{
     background-color: rgb(0, 10, 101);
     height: 35%;
     width: 20%;
@@ -193,11 +197,27 @@ redes con Teko*/
     text-decoration: none;
 }
 
- &__boton a{
-     height: 100%;
-     width: 100%;
+
+&__boton a{
+    height: 100%;
+    width: 100%;
+} 
+
  } 
- }
+
+.index__boton{
+    background-color: rgb(0, 10, 101);
+    height: 35%;
+    width: 20%;
+    border-radius: 15px;
+    grid-area: boton;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
 
  /*PAGINA INTEGRANTES*/ 
 .listadoIntegrantes2{
@@ -335,17 +355,14 @@ redes con Teko*/
 &__tracklist{
     list-style-type: decimal;
     color: blanchedalmond;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: 1.2vw;
     grid-area: track;
     margin-left: 10%;
     align-self: center;
-    filter: blur(12px);
 }
 
-&__tracklist:hover{
-    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
+
 
 @keyframes text-focus-in {
     0% {
@@ -418,7 +435,7 @@ redes con Teko*/
 /*Pagina CONTACTO*/
 
 .contacto {
-    height: 65%;
+    height: 75%;
     width: 100%;
     display: grid;
     grid-template-columns: 5% 45% 50%;
@@ -461,13 +478,20 @@ label{
     width: 5%;
 }
  .botonEnviar, .botonReset{
-     @extend .index__boton;
-     height: 20%;
-     width: 15%;
-     display: inline-block;
-     color: white;
-     font-size: 1vw;
-     font-family: 'Oswald', sans-serif;
+    background-color: rgb(0, 10, 101);
+    border-radius: 7px;   
+    grid-area: boton;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 20%;
+    width: 15%;
+    display: inline-block;
+    color: white;
+    font-size: 1vw;
+    font-family: 'Oswald', sans-serif;
  }
 
 
@@ -498,20 +522,19 @@ table{
 th{
     font-family: 'Bebas Neue', cursive;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 4vw;
     color: whitesmoke;
 }
 
 
 td{
-    font-size: 1.2vw;
+    font-size: 2vw;
     font-family: 'Oswald', sans-serif;
     border:whitesmoke 1px solid;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
+    color:rgb(1, 1, 190);
+
 }
-
-
-
 }
 /* medium devices */
 @media only screen and (max-width:992px){
@@ -521,43 +544,49 @@ td{
     }
     header{
         background:rgb(0, 0, 0);
-        align-items: flex-end;
+        display: flex;
+        justify-content: space-between;
+
 
         #btnMenu{
             display: none; 
         }
 
         #btnMenu:checked ~ .menu{
-            margin: 0;
+            margin-left: 0;
             transition: .4s;
 
         }
 
         .imgMenu{
-            width: 10vw;
-            margin-left: 85vw;
-        }
-        .labeMenu{
-            display:block;
-            margin-left: 70%;
-
+            width: 6vw;
+            margin-left: 2vw;
         }
 
         .labelMenu:hover{
             cursor: pointer;
         }
+
+        .headerLogo{
+            height: 7vw;
+            margin-right: 3vw;
+            margin-top: 1vw;
+        }
+
+        
     .menu{
         width: 100%;
         display: flex;
         height: 8vh;
         position: absolute;
         margin-left: -100%;
-    
+        margin-top: 8vw;
+
         &__lista{
             background-color: rgb(0, 0, 0);
             font-family: 'Oswald', sans-serif;
             font-weight: 800;
-            font-size: 10vw;
+            font-size: 6vw;
             text-decoration: none;
             list-style-type: none;
             display: flex;  
@@ -587,16 +616,16 @@ td{
     }
     }
 
-    .index{
-        display: flex;
-        background-image: url(../images/mustaine.jpg);
-        flex-direction: column;
-        width: 100%;
-        grid-area: texto;
-        background-color:darkgrey;
-        background-size: cover;
-        justify-content: center;
-        height: 85vh;
+.index{
+    display: flex;
+    background-image: url(../images/mustaine.jpg);
+    flex-direction: column;
+    width: 100%;
+    grid-area: texto;
+    background-color:darkgrey;
+    background-size: cover;
+    justify-content: center;
+    height: 85vh;
     
 
     &__logo{
@@ -617,26 +646,26 @@ td{
         backdrop-filter: blur(1px);
 
     }
+}
+.txtBoton{
+    color: white;
+    margin: 0;
+}
 
-    &__boton{
-        background-color: rgb(0, 10, 101);
-        height: 8%;
-        width: 30%;
-        border-radius: 7px;
-        font-family: 'Oswald', sans-serif;
-        grid-area: boton;
-        align-self: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-    }
 
-    .txtBoton{
-        color: white;
-        margin: 0;
-    }
+.index__boton{
+    background-color: rgb(0, 10, 101);
+    height: 8%;
+    width: 30%;
+    border-radius: 7px;
+    font-family: 'Oswald', sans-serif;
+    grid-area: boton;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 /* ENCABEZADO PAGINA SMALL */
 .encabezadoPagina{
@@ -698,12 +727,8 @@ td{
     grid-area: track;
     margin-left: 10%;
     align-self: center;
-    filter: blur(12px);
 }
 
-&__tracklist:hover{
-    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
 
 @keyframes text-focus-in {
     0% {
@@ -773,7 +798,7 @@ td{
         list-style-type: none;
         display: flex;
         justify-content: center;
-        height: 11vh;
+        height: 25vw;
     
     
         &__lista{
@@ -825,15 +850,16 @@ th{
 
 
 td{
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: 'Oswald', sans-serif;
     border:whitesmoke 1px solid;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
+    color:rgb(1, 1, 190);
 }
 
 /*SECCION CONTACTO*/
 .contacto {
-    height: 80vh;
+    height: 95vw;
     width: 100%;
 }
     
@@ -849,35 +875,48 @@ td{
     display: none;
  }
 
-label{
-     width: 70%;
+.newsLabel{
+     width: 50vw;
      font-family: 'Oswald', sans-serif;
-     font-size: 4vw;
+     font-size: 3vw;
      color: blanchedalmond;
  }
 
  textarea, input{
-     width: 70%
+     width: 70%;
  }
-
+label{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2vw;
+    color: blanchedalmond; 
+    width: 70%;
+}
  .botonesContacto{
      width: 100%;
-     grid-area: botones;
-     display: inline-block;
+     display: flex;
      background: linear-gradient(to right, black, rgb(167, 167, 167));
     height: 50%;
     align-items: center;
+    justify-content: center;
  }
 .newsCheck{
     width: 5%;
 }
+
 .botonEnviar, .botonReset{
-    @extend .index__boton;
-    height: 20%;
-    width: 15%;
+    background-color: rgb(0, 10, 101);
+    border-radius: 7px;   
+    grid-area: boton;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 5vw;
+    width: 10vw;
     display: inline-block;
     color: white;
-    font-size: 1vw;
+    font-size: 1.8vw;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -1004,37 +1043,39 @@ label{
     header{
         background:rgb(0, 0, 0);
         align-items: flex-end;
+        height: 7vw;
 
         #btnMenu{
             display: none; 
         }
 
         #btnMenu:checked ~ .menu{
-            margin: 0;
+            margin-left: 0;
             transition: .4s;
 
         }
 
         .imgMenu{
-            width: 10vw;
-            margin-left: 87vw;
-        }
-        .labeMenu{
-            display:block;
-            margin-left: 70%;
-
+            width: 6vw;
+            margin-left: 2vw;
         }
 
         .labelMenu:hover{
             cursor: pointer;
         }
+
+        .headerLogo{
+            height: 5vw;
+            margin-right: 3vw;
+            margin-top: 1vw;
+        }
     .menu{
         width: 100%;
         display: flex;
-        height: 8vh;
+        height: 10vw;
         position: absolute;
-        margin-left: -100%;
-    
+        margin-left: -100vw;
+
         &__lista{
             background-color: rgb(0, 0, 0);
             font-family: 'Oswald', sans-serif;
@@ -1105,7 +1146,6 @@ label{
         height: 8%;
         width: 30%;
         border-radius: 7px;
-        font-family: 'Oswald', sans-serif;
         grid-area: boton;
         align-self: center;
         display: flex;
@@ -1113,11 +1153,14 @@ label{
         justify-content: center;
         align-items: center;
         text-decoration: none;
+        margin-top: 10vw;
     }
 
     .txtBoton{
         color: white;
         margin: 0;
+        font-family: 'Oswald', sans-serif;
+        font-size: 4vw;
     }
 }
 /* ENCABEZADO PAGINA SMALL */
@@ -1230,7 +1273,7 @@ label{
         list-style-type: none;
         display: flex;
         justify-content: center;
-        height: 11vh;
+        height: 25vw;
     
     
         &__lista{
@@ -1259,7 +1302,7 @@ label{
     background-repeat: no-repeat;
     background-position-y: center;
     background-color: rgb(167,167,167);
-    height: 78vh;
+    height: 87vh;
     }
 
 table{
@@ -1285,7 +1328,8 @@ td{
     font-size: 3vw;
     font-family: 'Oswald', sans-serif;
     border:whitesmoke 1px solid;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
+    color:rgb(1, 1, 190);
 }
 
 /*SECCION CONTACTO*/
@@ -1324,17 +1368,25 @@ label{
      background: linear-gradient(to right, black, rgb(167, 167, 167));
     height: 50%;
     align-items: center;
+    justify-content: center;
  }
 .newsCheck{
     width: 5%;
 }
 .botonEnviar, .botonReset{
-    @extend .index__boton;
-    height: 20%;
-    width: 15%;
+    background-color: rgb(0, 10, 101);
+    border-radius: 7px;   
+    grid-area: boton;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 8vw;
+    width: 20vw;
     display: inline-block;
     color: white;
-    font-size: 1vw;
+    font-size: 3vw;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -1353,7 +1405,8 @@ label{
 
  .seccIntegrante1{
     width: 100%;
-    background-image: url(../images/mustaineSolo2.png);
+    background-image: url(../images/mustaine3.png);
+    background-position: center;
     background-color: rgb(67,67,67);
     height: 600px;
     display: grid;
@@ -1378,7 +1431,7 @@ label{
 
 .seccIntegrante3{
    width: 100%;
-   background-image: url(../images/dirkSolo.png);
+   background-image: url(../images/dirk3.jpg);
    background-size: cover;
    background-color: rgb(67,67,67);
    height: 600px;
@@ -1403,28 +1456,40 @@ label{
     color:$color;
 }
 .txtIntegrante1{
-    @include txtInt(3.5vw, whitesmoke);
+    @include txtInt(3.5vw, blanchedalmond);
     font-family:'Oswald', sans-serif; ;
     grid-area: txt;
-    width: 70%;
+    width: 75%;
+    height: 60vw;
     z-index: 5;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 2vw;
 }
 
 .txtIntegrante2{
-    @include txtInt(3.5vw, whitesmoke);
+    @include txtInt(3.5vw, blanchedalmond);
     font-family:'Oswald', sans-serif;
     grid-area: txt;
     width: 70%;
+    height: 60vw;
     z-index: 5;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 2vw;
 }
 
 
 .txtIntegrante3{
-    @include txtInt(3.5vw, whitesmoke);
+    @include txtInt(3.5vw, blanchedalmond);
     font-family:'Oswald', sans-serif; 
     grid-area: txt;
     width: 70%;
+    height: 60vw;
     z-index: 5;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 2vw;
 }
 
 
@@ -1455,7 +1520,7 @@ label{
     font-family: 'Bebas Neue', cursive;
     font-weight: 500;
     font-size: 8vw;
-    color: whitesmoke;
+    color: #000a65;
     z-index: 10;
 }
 
